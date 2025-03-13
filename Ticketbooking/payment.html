@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Navigation bar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #navbar {
+            background-color: rgb(3, 152, 3);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 20px;
+        }
+
+        .logo h1 {
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .login button {
+            background-color: rgb(221, 59, 0);
+            color: white;
+            font-size: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            border: none;
+        }
+
+        /* Container for payment and price details */
+        #bustravdetail {
+            display: flex;
+            /* justify-content: space-between; */
+            gap: 30px;
+            padding: 100px;
+            margin: 100px;
+            flex-wrap: wrap;
+            font-size: 25px;
+        }
+
+        /* Payment Details */
+        .paymentdetail {
+            flex: 1;
+            max-width: 500px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .payheader {
+            background-color: #a8d08d;
+            padding: 20px;
+            text-align: left;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .payment-option {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+
+        .payment-option:last-child {
+            margin-bottom: 0;
+        }
+
+        .payment-option h3 {
+            margin-top: 0;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+
+        .payment-option input[type="text"],
+        .payment-option input[type="number"] {
+            width: calc(50% - 10px);
+            padding: 8px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .payment-option input[type="text"]:last-child,
+        .payment-option input[type="number"]:last-child {
+            margin-right: 0;
+        }
+
+        .payment-option .card-logos {
+            margin-bottom: 10px;
+          
+        }
+
+        .payment-option .card-logos img {
+            height: 20px;
+            margin-right: 5px;
+        }
+
+        .payment-option .upi-input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        /* Price Details */
+        .priceflex {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .bustravdetailheader h1 {
+            background-color: rgb(115, 175, 115);
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .borderprice {
+            border: 1px solid black;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+        }
+
+        .fare,
+        .amnt {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
+
+        .line {
+            width: 100%;
+            height: 1.5px;
+            background-color: black;
+            margin: 10px 0;
+        }
+
+        #btn button {
+            color: white;
+            width: 100%;
+            height: 50px;
+            font-size: 20px;
+            background-color: red;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .para {
+            font-size: 14px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media screen and (max-width: 768px) {
+            #bustravdetail {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .paymentdetail,
+            .priceflex {
+                max-width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation bar -->
+    <section id="navbar">
+        <div class="logo">
+         <a href="\Ticketbooking\layout.html"> <h1>Logo Here</h1></a>
+        </div>
+        <div class="nav">
+            <a href="#Home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#skills">Contact Us</a>
+        </div>
+        <div class="login">
+            <button>Login</button>
+        </div>
+    </section>
+
+    <!-- Container for payment and price details -->
+    <section id="bustravdetail">
+        <!-- Payment Details Section -->
+        <div class="paymentdetail">
+            <div class="payheader">Payment Details</div>
+            <div class="content">
+                <div class="payment-option">
+                    <h3>Credit/Debit Cards</h3>
+                    <div class="card-logos">
+                        <img src="\Ticketbooking\visa.png" alt="Visa">
+                        <img src="\Ticketbooking\master.png" alt="Mastercard">
+                    </div>
+                    <input type="number" placeholder="Card Number">
+                    <input type="text" placeholder="MM/YY">
+                    <input type="number" placeholder="CVV">
+                </div>
+                <div class="payment-option">
+                    <h3>UPI Payments</h3>
+                    <input type="text" placeholder="Pay Using UPI Id" class="upi-input">
+                </div>
+                <div class="payment-option other-payments">
+                    <h3>Other Payments</h3>
+                    <div class="card-logos" >
+                        <img src="\Ticketbooking\paytm.png" alt="Paytm">
+                        <img src="\Ticketbooking\paypal.png" alt="PayPal">
+                        <img src="\Ticketbooking\gpay.png" alt="Google Pay">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Price Details Section -->
+        <div class="priceflex">
+            <div class="bustravdetailheader">
+                <h1>Price Details</h1>
+            </div>
+            <div class="borderprice">
+                <div class="fare">
+                    <h3>Base Fare <br><span id="selected-seats-list"></span></h3>
+                    <h3>₹1,800.0</h3>
+                </div>
+                <div class="line"></div>
+                <div class="amnt">
+                    <h3>Amount <br><span id="selected-seats-list"></span></h3>
+                    <h3>₹1,800</h3>
+                </div>
+                <div class="line"></div>
+                <div id="btn">
+                    <a href="#"><button class="continue-btn" onclick="continueToNextPage()">Continue</button></a>
+                </div>
+                <div class="para">
+                    By proceeding, I agree to MakeMYTrip's <em style="color: green;">User <br> Agreement, Terms of Service </em>and <em style="color: green;">Privacy Policy</em>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

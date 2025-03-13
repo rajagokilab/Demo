@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search_hands_free" />
+
+    <style>
+        /* Navigation bar */
+        *
+        {margin: 0;
+        padding: 0;
+    box-sizing: border-box;}
+        #navbar{
+            background-color: rgb(3, 152, 3);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+             font-size: 20px;
+
+        }
+        .logo{
+            cursor: pointer;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+            /* background-color: rgb(30, 18, 2);    */
+        }
+        .nav{
+            /* background-color: black; */
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+           
+        }
+        .login button{
+           background-color:rgb(221, 59, 0);
+           color: white;
+           font-size: 20px;
+           padding: 10px 20px;
+           cursor: pointer;
+           border-radius: 10px;
+           
+        }
+
+        
+        /* Banner */
+        #banner{
+            color: rgb(3, 3, 3);
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            display: flex;
+             justify-content: space-around;
+            align-items:flex-end;
+            /* padding-bottom: 50px; */
+             align-content: center;
+            /* height: 500px; */
+        }
+
+        .from, .to, .depart, .search {
+    border: 3px solid rgb(4, 4, 4);
+    width: 250px;
+    height: 80px;
+    padding: 10px;
+    font-style: bold;
+    /* display: flex; */
+    flex-direction: column;
+    color: rgb(11, 11, 11);
+    
+    border-radius: 10px; /* Rounded edges for a softer look */
+    
+}
+
+        .ban{
+            background-color: rgba(101, 155, 78, 0.7); 
+            display: flex;
+            justify-content: space-around;
+            gap: 150px;
+            padding: 50px;
+            /* opacity: 0.5;  */
+            backdrop-filter: blur(1px);
+           bottom: 0;
+            /* left: 0; */
+            margin: 50px;
+        }
+        .search{
+            text-align: center;
+            align-items: center;
+        }
+      
+        .deck h3{
+            color: rgb(0, 94, 0);
+            align-items: center;
+}
+        .line{
+            width: 250px;
+           height: 1px;
+           background-color: black;
+           margin-bottom: 20px;
+           margin: 10px;
+           
+        }
+        .deck{
+            display: flex;
+           justify-content:center;
+           gap: 50px;
+            /* margin: 20px; */
+            
+            
+        }
+        .seat-row {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    /* background-color: aquamarine; */
+
+}
+
+.seat-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin: 10px; */
+    /* position: relative; */
+}
+/* INNER SEAT */
+.seat {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    /* background-color: lightgray; */
+    border-radius: 5px;
+}
+
+.price {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+ .lower{
+    border: 1px solid black;
+    padding:30px;
+    box-shadow: 0 1px 10px grey;
+    border-top: 8px solid gray;
+    border-radius: 2%;
+
+
+ }
+
+ .single-seat {
+    margin-right: 50px; /* Increase gap between L3 and L2/L1 */
+}
+ /*BORDER FOR SEAT  */
+ .available{
+    /* background-color: blue; */
+    border: 2px solid black;
+    height: 80px;
+    width: 45px;
+    gap: 20px;
+    display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* margin: 10px; */
+ }
+ /* HEADER FOR DECK */
+ .seatheader span{
+    display: flex;
+     text-align: center;
+     align-items: center;
+     /* background-color: aquamarine; */
+     justify-content: center;
+ }
+ .seatheader{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+ }
+ .empty{
+    width: 30px;
+    height: 5px;
+    border: 1px solid black;
+    margin-left: 5px;
+ }
+ .selectseat h2{
+    margin-left: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    margin-bottom: 10px;
+ }
+ #mandatory {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* Legend - Available, Unavailable, Selected, Female */
+.legend {
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; */
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 60px;
+}
+
+.legend div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.legend span {
+    width: 50px;
+    height: 30px;
+    display: inline-block;
+    
+    border-radius: 3px;
+}
+
+.availables {
+    border: 2px solid black;
+    background-color: rgb(255, 254, 254);
+}
+
+.unavailable {
+    border: 2px solid black;
+    background-color: rgb(198, 195, 195);
+}
+
+.selected {
+    background-color: rgb(17, 119, 17);
+    border: 2px solid rgb(0, 105, 0);
+}
+
+.female {
+    border: 2px solid rgb(0, 105, 0);
+}
+.seatnum{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.seatnum h3{
+    color: black;
+    font-size: 20px;
+}
+#fees{
+    color: green;
+    font-size: 12px;
+    text-align: center;
+}
+#butn button{
+    color: rgb(251, 251, 251);
+    width:400px;
+    height: 50px;
+    font-size: 23px;
+    background-color: red;
+    border: none;
+}
+.seat[data-seat="U20"]:hover,
+.seat[data-seat="U21"]:hover {
+    background-color: rgb(65, 105, 65) !important;
+    color: white;
+}
+/* Hide the actual checkbox */
+.seat-checkbox {
+    display: none;
+}
+
+/* When the checkbox is checked, change the background to green */
+.seat-checkbox:checked + .seat {
+    background-color: rgb(80, 112, 80) !important;
+    color: white;
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <section id="navbar">
+        <div class="logo">
+           <a href="\Ticketbooking\layout.html"> <h1>Logo Here</h1></a>
+        </div>
+        <div class="nav">
+            <a href="#Home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#skills">Contacy Us</a>
+        </div>
+        <div class="login">
+            <button>Login</button>
+        </div>
+
+    </section>
+     <!-- Banner  -->
+     <section id="banner">
+        <div class=ban>
+        <div class="from">
+            <h1>FROM</h1>
+            <h5>Tenkasi</h5>
+        </div>
+        <div class="to">
+            <h1>TO</h1>
+            <h5>Chennai</h5>
+        </div>
+        <div class="depart">
+            <h1>Depart</h1>
+            <input type="date" id="datetype" style="color: black;">
+        </div>
+        <div class="search"> 
+            <h1>Search</h1>
+
+        </div>
+    </div>
+     </section>
+     <section class="selectseat">
+        <h2>Select a Seat</h2>
+
+  
+        <div class="seat-selection">
+
+          <div class="deck">
+   
+             <div class="lower">
+                <div class="seatheader">
+         <h3>Lower Deck</h3><span class="material-symbols-outlined">
+           search_hands_free
+           </span>
+                 </div>
+         
+       <div class="line"></div>
+          <div class="seat-row">
+            <div class="seat-wrapper single-seat">
+               <div class="seat available " data-seat="L3" data-price="1000">L3 <div class="empty"></div></div>
+                
+               <div class="price">₹1000</div>
+               </div>
+            <div class="seat-wrapper">
+               <div class="seat available" data-seat="L2" data-price="900" style="background-color: rgb(210, 210, 210);">L2 <div class="empty"></div></div>
+               <div class="price">₹900</div>
+            </div>
+           <div class="seat-wrapper">
+               <div class="seat available" data-seat="L1" data-price="900">L1 <div class="empty"></div></div>
+               <div class="price">₹900</div>
+           </div>
+       </div>
+       
+       <div class="seat-row">
+           <div class="seat-wrapper single-seat">
+               <div class="seat available " data-seat="L6" data-price="1000"  style="border:2px solid green;">L6 <div class="empty"></div></div>
+               <div class="price">₹1000</div>
+           </div>
+           <div class="seat-wrapper">
+               <div class="seat available" data-seat="L5" data-price="900" style="background-color: rgb(210, 210, 210);">L5 <div class="empty"></div></div>
+               <div class="price">₹900</div>
+           </div>
+           <div class="seat-wrapper">
+               <div class="seat available" data-seat="L4" data-price="900" style="background-color: rgb(210, 210, 210);">L4 <div class="empty"></div></div>
+               <div class="price">₹900</div>
+           </div>
+       </div>
+       
+       <div class="seat-row">
+           <div class="seat-wrapper single-seat">
+               <div class="seat available" data-seat="L9" data-price="1000" style="background-color: rgb(210, 210, 210);">L9 <div class="empty"></div></div>
+               <div class="price">₹1000</div>
+           </div>
+           <div class="seat-wrapper">
+               <div class="seat available" data-seat="L8" data-price="900" style="background-color: rgb(210, 210, 210);">L8 <div class="empty"></div></div>
+               <div class="price">₹900</div>
+           </div>
+           <div class="seat-wrapper">
+               <div class="seat available" data-seat="L7" data-price="900" style="background-color: rgb(210, 210, 210);">L7 <div class="empty"></div></div>
+               <div class="price">₹900</div>
+           </div>
+       </div>
+       
+       <div class="seat-row">
+           <div class="seat-wrapper single-seat">
+               <div class="seat available" data-seat="L12" data-price="1000">L12 <div class="empty"></div></div>
+               <div class="price">₹1000</div>
+           </div>
+           <div class="seat-wrapper">
+               <div class="seat available" data-seat="L11" data-price="900">L11 <div class="empty"></div></div>
+               <div class="price">₹900</div>
+           </div>
+           <div class="seat-wrapper">
+               <div class="seat available" data-seat="L10" data-price="900">L10 <div class="empty"></div></div>
+               <div class="price">₹900</div>
+           </div>
+       </div>
+       
+       <div class="seat-row">
+           <div class="seat-wrapper single-seat">
+               <div class="seat available" data-seat="L15" data-price="1000">L15 <div class="empty"></div></div>
+               <div class="price">₹1000</div>
+           </div>
+           <div class="seat-wrapper">
+               <div class="seat available" data-seat="L14" data-price="900">L14 <div class="empty"></div></div>
+               <div class="price">₹900</div>
+           </div>
+           <div class="seat-wrapper">
+               <div class="seat available" data-seat="L13" data-price="900">L13 <div class="empty"></div></div>
+               <div class="price">₹900</div>
+           </div>
+       </div>
+   </div>
+       
+       <div class="seat-selection">
+           <div class="deck">
+              <div class="lower">
+                 <div class="seatheader">
+          <h3>Upper Deck</h3><span class="material-symbols-outlined">
+            search_hands_free
+            </span>
+                  </div>
+          
+        <div class="line"></div>
+           <div class="seat-row">
+               <div class="seat-wrapper single-seat">
+                   <div class="seat available " data-seat="U16" data-price="1000" style="background-color: rgb(210, 210, 210);">U16 <div class="empty"></div></div>
+                    
+                   <div class="price">₹1000</div>
+                   </div>
+                <div class="seat-wrapper">
+                   <div class="seat available" data-seat="U15" data-price="900" style="background-color: rgb(210, 210, 210);">U15 <div class="empty"></div></div>
+                   <div class="price">₹900</div>
+                </div>
+               <div class="seat-wrapper">
+                   <div class="seat available" data-seat="U14" data-price="900" style="background-color: rgb(210, 210, 210);">U14 <div class="empty"></div></div>
+                   <div class="price">₹900</div>
+               </div>
+           </div>
+           
+           <div class="seat-row">
+               <div class="seat-wrapper single-seat">
+                   <div class="seat available" data-seat="U19" data-price="1000" style="background-color: rgb(210, 210, 210);">U19 <div class="empty"></div></div>
+                   <div class="price">₹1000</div>
+               </div>
+               <div class="seat-wrapper">
+                   <div class="seat available" data-seat="U18" data-price="900"  style="border:2px solid green;">U18 <div class="empty"></div></div>
+                   <div class="price">₹900</div>
+               </div>
+               <div class="seat-wrapper">
+                   <div class="seat available" data-seat="U17" data-price="900" style="border:2px solid green;">U17 <div class="empty"></div></div>
+                   <div class="price">₹900</div>
+               </div>
+           </div>
+           
+   <div class="seat-row">
+       <div class="seat-wrapper single-seat">
+           <input type="checkbox" id="seat-U22" class="seat-checkbox">
+           <label for="seat-U22" class="seat available" data-seat="U22">U22 <div class="empty"></div></label>
+           <div class="price">₹1000</div>
+       </div>
+   
+       <div class="seat-wrapper">
+           <input type="checkbox" id="seat-U21" class="seat-checkbox">
+           <label for="seat-U21" class="seat available" data-seat="U21">U21 <div class="empty"></div></label>
+           <div class="price">₹900</div>
+       </div>
+   
+       <div class="seat-wrapper">
+           <!-- Adding checkbox for U20 -->
+           <input type="checkbox" id="seat-U20" class="seat-checkbox">
+           <label for="seat-U20" class="seat available" data-seat="U20">U20 <div class="empty"></div></label>
+           <div class="price">₹900</div>
+       </div>
+   </div>
+           
+           <div class="seat-row">
+               <div class="seat-wrapper single-seat">
+                   <div class="seat available" data-seat="U25" data-price="1000" style="background-color: rgb(210, 210, 210);">U25 <div class="empty"></div></div>
+                   <div class="price">₹1000</div>
+               </div>
+               <div class="seat-wrapper">
+                   <div class="seat available" data-seat="U24" data-price="900" style="background-color: rgb(210, 210, 210);">U24 <div class="empty"></div></div>
+                   <div class="price">₹900</div>
+               </div>
+               <div class="seat-wrapper">
+                   <div class="seat available" data-seat="U23" data-price="900" style="background-color: rgb(210, 210, 210);">U23 <div class="empty"></div></div>
+                   <div class="price">₹900</div>
+               </div>
+           </div>
+           
+           <div class="seat-row">
+               <div class="seat-wrapper single-seat">
+                   <div class="seat available" data-seat="U28" data-price="1000">U28<div class="empty"></div></div>
+                   <div class="price">₹1000</div>
+               </div>
+               <div class="seat-wrapper">
+                   <div class="seat available" data-seat="U27" data-price="900">U27 <div class="empty"></div></div>
+                   <div class="price">₹900</div>
+               </div>
+               <div class="seat-wrapper">
+                   <div class="seat available" data-seat="U26" data-price="900">U26 <div class="empty"></div></div>
+                   <div class="price">₹900</div>
+               </div>
+           </div>
+       </div> 
+       
+   
+   <div class="rightbar">
+       <section id="mandatory">
+           <!-- Legend Section -->
+           <div class="legend">
+               <div><span class="availables"></span> Available</div>
+               <div><span class="female"></span>Female </div>
+               <div><span class="unavailable"></span> Unavailable</div>
+               <div><span class="selected"></span>Selected </div>
+           </div>
+   </section>
+   
+   <section id="seatprice">
+     <div class="selected-seats">
+       <div class="seatnum">
+       <h3>Selected Seat <br><span id="selected-seats-list">U21,U20</span></h3>
+       <h3>₹1,800 <br>
+            <span id="fees">Fees Details</span></h3>
+   </div>
+     </div>
+   </section>
+   
+   
+   <section id="butn">
+       <div>
+    <a href="\Ticketbooking\buspricedetails.html"> <button class="continue-btn" onclick="continueToNextPage()" style="cursor: pointer;">Continue</button>
+    </a></div>
+   </section>
+   </div>
+        
+   </body>
+   </html>

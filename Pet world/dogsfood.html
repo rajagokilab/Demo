@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="\Pet world\style.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:cursive;
+}
+
+/* Navbar */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    padding: 20px 50px;
+}
+
+.logo h2 {
+    margin-left: 10px;
+    font-family: cursive;
+}
+
+.logo b {
+    color: orange;
+}
+
+.searchbox {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.searchnav, .location {
+    position: relative;
+    align-content: center;
+    padding: 20px 20px; 
+}
+
+.searchnav input,
+.location input {
+    width: 350px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1.5px solid black;
+    font-size: 18px;
+}
+
+.searchnav i
+ {
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: orange;
+    cursor: pointer;
+}
+.location i
+{
+    position: absolute;
+    left:50px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;   
+    color: orange; 
+}
+
+.location i {
+    left: 15px;
+}
+
+/* User Icons */
+.user {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    margin-right: 20px;
+}
+
+.user a {
+    font-size: 24px;
+    color: orange;
+}
+
+/* Product Container */
+#product-container {
+    background-color: rgb(6, 128, 121);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 20px;
+    gap: 10px;
+    /* text-align: center; */
+    margin-bottom: 30px; 
+    justify-content: end;  
+}
+
+.dog {
+    position: relative;
+    align-self: end;
+    justify-self: end;
+    padding-top: 10px;
+}
+
+.dropbtn {
+    background-color: rgb(6, 128, 121);
+    color: white;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 180px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(6, 128, 121);
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #e68900;
+}
+
+        .product-section {
+            background-color: white;
+            /* padding: 20px; */
+            border-radius: 8px;
+            /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+        }
+        .product-section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            
+        }
+        .product-grid {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            /* background-color: aquamarine; */
+        }
+        .product-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .product-item img {
+            width: 150px; /* Fixed width for the circular images */
+            height: 150px; /* Fixed height for the circular images */
+            border-radius: 50%; /* Makes the images circular */
+            object-fit: cover; /* Ensures the image covers the circle */
+            /* margin: 10px; */
+            border: 1px solid rgb(52, 209, 240);
+        }
+        .product-item span {
+            font-weight: bold;
+            /* color: #555; */
+        }
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.product-header {
+  background-color: #e0f7fa;
+  background-color: #04a0a8;
+  padding: 10px;
+  text-align: center;
+}
+
+.product-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.product-details {
+  padding: 20px;
+}
+
+.rating {
+  color: #ff9800;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.star {
+  margin-right: 5px;
+}
+
+.product-name {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.mrp {
+  color: #777;
+  text-decoration: line-through;
+  margin-left: 5px;
+}
+
+.discount {
+    background-color: #04a0a8;
+  margin-left: 5px;
+}
+
+.sizes {
+  margin-bottom: 15px;
+}
+
+.sizes span {
+  background-color: #f0f0f0;
+  padding: 5px 8px;
+  border-radius: 4px;
+  margin-right: 5px;
+  font-size: 0.9em;
+}
+
+.add-to-cart {
+  background-color: #04a0a8;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+.footer {
+    background-color: #01435a;
+    padding: 20px 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    color: rgb(255, 255, 255);
+    font-family: cursive;
+    font-size: 18px;
+}
+    </style>
+</head>
+<body>
+       <!-- Navbar -->
+       <section id="navbar">
+        <div class="logo">
+            <img src="\Pet world\logio.png" alt="logo" width="50">
+            <h2>Pet <b>World</b></h2>
+        </div>
+
+        <div class="searchbox">
+            <div class="searchnav">
+                <input type="search" placeholder="Search for Products" required>
+                <i class="fa fa-search"></i>
+            </div>
+            <div class="location">
+                <input type="text" placeholder="Enter Pincode to Check Delivery Date" required>
+                <i class="fa fa-map-marker"></i>
+            </div>
+        </div>
+
+        <div class="user">
+            <a href="#"><i class="fa fa-phone"></i></a>
+            <a href="#"><i class="fa fa-user"></i></a>
+            <a href="#"><i class="fa fa-shopping-cart"></i></a>
+        </div>
+    </section>
+
+    <!-- Product Dropdown Section -->
+    <section id="product-container">
+        <div class="dog dropdown">
+            <button class="dropbtn">Dogs <i class="fa fa-caret-down"></i></button>
+            <div class="dropdown-content">
+                <a href="#">Food</a>
+                <a href="#">Grooming</a>
+                <a href="#">Health</a>
+            </div>
+        </div>
+        <div class="dog dropdown">
+            <button class="dropbtn">Cats <i class="fa fa-caret-down"></i></button>
+            <div class="dropdown-content">
+                <a href="#">Food</a>
+                <a href="#">Grooming</a>
+                <a href="#">Health</a>
+            </div>
+        </div>
+        <div class="dog dropdown">
+            <button class="dropbtn">Birds <i class="fa fa-caret-down"></i></button>
+            <div class="dropdown-content">
+                <a href="#">Food</a>
+                <a href="#">Grooming</a>
+                <a href="#">Health</a>
+            </div>
+        </div>
+        <div class="dog dropdown">
+            <button class="dropbtn">Fish <i class="fa fa-caret-down"></i></button>
+            <div class="dropdown-content">
+                <a href="#">Food</a>
+                <a href="#">Grooming</a>
+                <a href="#">Health</a>
+            </div>
+        </div>
+    </section>
+        <div class="container">
+            <div class="product-section">
+                <h2>DOGS Food</h2>
+                <div class="product-grid">
+                    <div class="product-item">
+                        <img src="\Pet world\images\Rectangle 44-100.png" alt="Meal Dog Food">
+                        <span>Meal</span>
+                    </div>
+                    <div class="product-item">
+                        <img src="\Pet world\images\Rectangle 44-100.png" alt="Puppy Food">
+                        <span>Puppy Food</span>
+                    </div>
+                    <div class="product-item">
+                        <img src="\Pet world\images\Rectangle 44-100.png" alt="Adult Food">
+                        <span>Adult Food</span>
+                    </div>
+                    <div class="product-item">
+                        <img src="\Pet world\images\Rectangle 44-100.png" alt="Pedigree Dog Food">
+                        <span>Pedigree</span>
+                    </div>
+                    <div class="product-item">
+                        <img src="\Pet world\images\Rectangle 44-100.png" alt="Royal Canin Dog Food">
+                        <span>Royal Canin</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+  <div class="product-grid">
+    <div class="product-card">
+      <div class="product-header">
+        Extra 5% Off. Use code SC35
+      </div>
+      <div class="product-image">
+        <img src="\Pet world\images\pedigreen.png" alt="Hill's Science Diet Adult Chicken & Barley Recipe">
+      </div>
+      <div class="product-details">
+        <div class="rating">
+          <span class="star">★</span> 4.9
+        </div>
+        <h2 class="product-name">Hill's Science Diet Adult Chicken & Barley Recipe</h2>
+        <div class="price">
+          Rs. 4800
+          <span class="mrp">MRP Rs. 5200</span>
+          <span class="discount">12% Off</span>
+        </div>
+        <div class="sizes">
+          <span>1 kg</span>
+          <span>2.8 kg</span>
+          <span>800 g</span>
+          <span>5 kg</span>
+          <span>1.5 kg</span>
+          <span>3 kg</span>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-header">
+        Extra 5% Off. Use code SC35
+      </div>
+      <div class="product-image">
+        <img src="\Pet world\images\pedigreen.png" alt="Blue Buffalo Life Protection Formula">
+      </div>
+      <div class="product-details">
+        <div class="rating">
+          <span class="star">★</span> 4.9
+        </div>
+        <h2 class="product-name">Blue Buffalo Life Protection Formula</h2>
+        <div class="price">
+          Rs. 4800
+          <span class="mrp">MRP Rs. 5200</span>
+          <span class="discount">12% Off</span>
+        </div>
+        <div class="sizes">
+          <span>1 kg</span>
+          <span>2.8 kg</span>
+          <span>800 g</span>
+          <span>5 kg</span>
+          <span>1.5 kg</span>
+          <span>3 kg</span>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-header">
+        Extra 5% Off. Use code SC35
+      </div>
+      <div class="product-image">
+        <img src="\Pet world\images\pedigreen.png" alt="Pedigree Adult Complete Nutrition">
+      </div>
+      <div class="product-details">
+        <div class="rating">
+          <span class="star">★</span> 4.9
+        </div>
+        <h2 class="product-name">Pedigree Adult Complete Nutrition</h2>
+        <div class="price">
+          Rs. 4800
+          <span class="mrp">MRP Rs. 5200</span>
+          <span class="discount">12% Off</span>
+        </div>
+        <div class="sizes">
+          <span>1 kg</span>
+          <span>2.8 kg</span>
+          <span>800 g</span>
+          <span>5 kg</span>
+          <span>1.5 kg</span>
+          <span>3 kg</span>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-header">
+        Extra 5% Off. Use code SC35
+      </div>
+      <div class="product-image">
+        <img src="\Pet world\images\pedigreen.png" alt="Taste of the Wild High Prairie Canine Recipe">
+      </div>
+      <div class="product-details">
+        <div class="rating">
+          <span class="star">★</span> 4.9
+        </div>
+        <h2 class="product-name">Taste of the Wild High Prairie Canine Recipe</h2>
+        <div class="price">
+          Rs. 4800
+          <span class="mrp">MRP Rs. 5200</span>
+          <span class="discount">12% Off</span>
+        </div>
+        <div class="sizes">
+          <span>1 kg</span>
+          <span>2.8 kg</span>
+          <span>800 g</span>
+          <span>5 kg</span>
+          <span>1.5 kg</span>
+          <span>3 kg</span>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-section flex-item">
+        <div class="logo">
+            <img src="logio.png" alt="logo" width="50">
+            <h2>Pet <b>World</b></h2>
+            <p style="color: white;">©2025 Pet World. All rights reserved.</p>
+            <ul>
+                <li><a href="#">Privacy policy</a></li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Sitemap</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-section">
+        <h3 style="color: orange;">Shop Now</h3>
+        <ul>
+            <li><a href="#">Dogs</a></li>
+            <li><a href="#">Cats</a></li>
+            <li><a href="#">Birds</a></li>
+            <li><a href="#">Fish</a></li>
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h3 style="color: orange;">Online Shopping</h3>
+        <ul>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Return Policy</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </div>
+    <div class="footer-section footer-contact">
+        <p><i class="fa fa-phone" style="color: orange;"></i>+91 12367 53490</p>
+        <p><i class="fa fa-map-marker" style="color: orange;"></i>45 cross street, Mumbai.</p>
+        <p><i class="fa fa-envelope" style="color: orange;"></i>pet.world@gmail.com</a></p>
+        <p><i class="fa fa-clock-o" style="color: orange;"></i>Timing: 10 AM - 5 PM</p>
+    </div>
+</footer>
+</body>
+</html>
